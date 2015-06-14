@@ -1,20 +1,38 @@
 lreisoliveira
 =============
 
-Projeto em Zend Framework 2 com módulos específicos de tópicos
-que estou aprendendo a otimizar e usar corretamente.
+Projeto em Zend Framework 2 com módulos de referência
 
-1) Módulo API - Restful
-
-	Exemplo:
+1) Módulo Soap
 
 	Server:
-		http://zf2.git/api/equipes/1
+		http://HOST/server-soap/
+
+	WSDL:	
+		http://HOST/server-soap/?wsdl
 
 	Client:
-		http://zf2.git/api/client?metodo=delete&servico=equipes&id=3
+		http://HOST/client-soap/
+	
 
-	onde zf2.git é o nome do domínio configurado na minha máquina.
+	onde está HOST é o nome do domínio configurado no servidor.	
 
-	Altere pelo seu equivalente.
+2) Módulo Rest
+
+	Client:
+		http://HOST/client-soap/post.xml
+		http://HOST/client-soap/put.xml
+		http://HOST/client-soap/delete.xml
+		http://HOST/client-soap/get.xml
+		
+		http://HOST/client-soap/post.json
+		http://HOST/client-soap/put.json
+		http://HOST/client-soap/delete.json
+		http://HOST/client-soap/get.json
+
+	Server:
+		http://HOST/client-rest/get.xml
+
+	onde está HOST é o nome do domínio configurado no servidor.	
+
 
