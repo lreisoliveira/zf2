@@ -29,9 +29,12 @@ Projeto em Zend Framework 2 com módulos de referência
 		http://HOST/client-soap/put.json
 		http://HOST/client-soap/delete.json
 		http://HOST/client-soap/get.json
+		
+		-- post,put,delete e get são os verbos http
+		-- .xml ou .json são os formatos de retorno solicitados
 
 	Server:
-		http://HOST/client-rest/get.xml
+		http://HOST/server-rest/
 
 	onde está HOST é o nome do domínio configurado no servidor.	
 
