@@ -1,4 +1,4 @@
-lreisoliveira
+ZF2
 =============
 
 Projeto em Zend Framework 2 com módulos de referência
@@ -20,15 +20,15 @@ Projeto em Zend Framework 2 com módulos de referência
 2) Módulo Rest
 
 	Client:
-		http://HOST/client-soap/post.xml
-		http://HOST/client-soap/put.xml
-		http://HOST/client-soap/delete.xml
-		http://HOST/client-soap/get.xml
+		http://HOST/client-rest/post.xml
+		http://HOST/client-rest/put.xml
+		http://HOST/client-rest/delete.xml
+		http://HOST/client-rest/get.xml
 		
-		http://HOST/client-soap/post.json
-		http://HOST/client-soap/put.json
-		http://HOST/client-soap/delete.json
-		http://HOST/client-soap/get.json
+		http://HOST/client-rest/post.json
+		http://HOST/client-rest/put.json
+		http://HOST/client-rest/delete.json
+		http://HOST/client-rest/get.json
 		
 		-- post,put,delete e get são os verbos http
 		-- .xml ou .json são os formatos de retorno solicitados
