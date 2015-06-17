@@ -46,7 +46,7 @@ class ServerController extends AbstractActionController
         $autodiscover->setClass('\Soap\Service\OlaMundo');
 
         // Setamos o Uri de retorno sem o parâmetro ?wdsl
-        $autodiscover->setUri('http://zf2/server-soap');
+        $autodiscover->setUri('http://'.$_SERVER['HTTP_HOST'].'/server-soap/index');
         $wsdl = $autodiscover->generate();
         $wsdl = $wsdl->toDomDocument();
 
@@ -61,13 +61,13 @@ class ServerController extends AbstractActionController
     	
     	$options = array(
     			'cache_wsdl'     => WSDL_CACHE_NONE,
-    			'uri'            => 'http://'.$_SERVER['HTTP_HOST'].'/server-soap/',
-    			'location'       => 'http://'.$_SERVER['HTTP_HOST'].'/server-soap/',
+    			'uri'            => 'http://'.$_SERVER['HTTP_HOST'].'/server-soap/index',
+    			'location'       => 'http://'.$_SERVER['HTTP_HOST'].'/server-soap/index',
     	);
     	
-    	$wsdl = 'http://'.$_SERVER['HTTP_HOST'].'/server-soap/?wsdl';
+    	$wsdl = 'http://'.$_SERVER['HTTP_HOST'].'/server-soap/index?wsdl';
     	
-    	$server = new \SOAPServer($wsdl, $options);
+    	$server = new SoapServer($wsdl, $options);
     	$server->setObject(new OlaMundo());
     	$server->handle();
    }

@@ -11,7 +11,7 @@ return array(
             'server-soap' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/server-soap/',
+                    'route' => '/server-soap/index',
                 	//'route' => '/server-soap[.:format][/:id]',
                     'constraints' => array(
                         'format' => '(json)',
@@ -23,14 +23,14 @@ return array(
                 ),
             ),
         		
-			// rota para client soap
-        	'client-soap' => array(
+			// rota para client soap zend
+        	'client-soap-zend' => array(
         		'type' => 'Segment',
         		'options' => array(
         			//'route' => '/client-soap[/:id].:format',
-        			'route' => '/client-soap/',
+        			'route' => '/client-soap/usando-zend-client',
         			'constraints' => array(
-        				'id'           => '\d+',
+        				'id'        => '\d+',
         				'format'    => '(xml|json)',
         			),
         			'defaults' => array(
@@ -39,6 +39,24 @@ return array(
         			),
 				),
         	),
+        		
+        	// rota para client soap nativo
+        	'client-soap-nativo' => array(
+        			'type' => 'Segment',
+        			'options' => array(
+        					//'route' => '/client-soap[/:id].:format',
+        					'route' => '/client-soap/usando-soap-client',
+        					'constraints' => array(
+        							'id'        => '\d+',
+        							'format'    => '(xml|json)',
+        					),
+        					'defaults' => array(
+        							'controller' => 'Soap\Controller\Client',
+        							'action' => 'nativo',
+        					),
+        			),
+        	),
+        		
         	
         ),
     ),

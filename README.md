@@ -9,12 +9,12 @@ Projeto em Zend Framework 2 com módulos de referência
 		http://HOST/server-soap/
 
 	WSDL:	
-		http://HOST/server-soap/?wsdl
+		http://HOST/server-soap/index?wsdl
 
 	Client:
-		http://HOST/client-soap/
+		http://HOST/client-soap/usando-zend-client
+		http://HOST/client-soap/usando-soap-client
 	
-
 	onde está HOST é o nome do domínio configurado no servidor.	
 
 2) Módulo Rest
@@ -36,6 +36,4 @@ Projeto em Zend Framework 2 com módulos de referência
 	Server:
 		http://HOST/server-rest/
 
-	onde está HOST é o nome do domínio configurado no servidor.	
-
-
+	onde está HOST é o nome do domínio configurado no servidor.
