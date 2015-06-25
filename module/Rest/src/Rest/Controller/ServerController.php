@@ -113,7 +113,7 @@ class ServerController extends AbstractRestfulController
         
         $parametro = $this->params()->fromQuery();
         
-        $response = $this->preparaResposta($content,__METHOD__ . $parametro['meuParametro']);
+        $response = $this->preparaResposta($content,__METHOD__);
         return $response;
     }
 

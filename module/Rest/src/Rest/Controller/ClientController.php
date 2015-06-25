@@ -22,7 +22,7 @@ class ClientController extends AbstractRestfulController
      */
     public function get($id)
     {
-
+    	
         $client = new HttpClient();
         $client->setAdapter('Zend\Http\Client\Adapter\Curl');
         
@@ -35,15 +35,15 @@ class ClientController extends AbstractRestfulController
         	$contentType = 'text/html';
         
         // url do service
-        $url = "http://zf2/server-rest.$format/1";
-        	 
+        $url = "http://".$_SERVER['HTTP_HOST']."/server-rest.$format/1";
+        
         // define a url do service
         $client->setUri($url);
         
         // define os headers
         $client->setHeaders(
 	        		array(
-		        		'Host' 				=> 'www.example.com',
+		        		//'Host' 				=> 'www.example.com',
 		        		'Accept-encoding' 	=> 'gzip,deflate',
 		        		'X-Powered-By' 		=> 'Zend Framework',
 		        		'Content-Type' 		=> $contentType

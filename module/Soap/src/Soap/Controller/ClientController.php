@@ -62,7 +62,7 @@ class ClientController extends AbstractActionController
    			'soap_version' => SOAP_1_2,
    		);
    		
-	   	$client = new Client('http://'.$_SERVER['HTTP_HOST'].'server-soap/index?wsdl', $options);
+	   	$client = new Client('http://'.$_SERVER['HTTP_HOST'].'/server-soap/index?wsdl', $options);
 	   		
 	   	try {
 	   	
