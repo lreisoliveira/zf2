@@ -14,6 +14,25 @@ use Zend\View\Model\JsonModel;
 class ClientController extends AbstractRestfulController
 {
 
+	private function getDados()
+	{
+		$entityManager = $this->getServiceLocator()->get('Doctrine\ORM\EntityManager');
+		 
+		try {
+		
+			$entityManager->getConnection()->connect();
+			 
+		} catch (\Exception $e) {
+		
+			print_r($e->getMessage());
+		}
+		 
+		$repositoryApdata = $entityManager->getRepository("Rest\Entity\Instituicao");
+		
+		//print_r( $repositoryApdata->findAll());
+		//die;
+	}
+	
     /**
      * Exemplo de consumo de webservice rest
      *
@@ -23,7 +42,9 @@ class ClientController extends AbstractRestfulController
     public function get($id)
     {
     	
-        $client = new HttpClient();
+    	$this->getDados();
+   	
+    	$client = new HttpClient();
         $client->setAdapter('Zend\Http\Client\Adapter\Curl');
         
         // json | xml | html

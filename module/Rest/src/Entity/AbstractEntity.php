@@ -3,7 +3,7 @@
 /**
  * Abastração da entity
  */
-namespace Api\Entity;
+namespace Intranet\Entity;
 
 use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
@@ -24,13 +24,13 @@ abstract class AbstractEntity implements InputFilterAwareInterface
      * @var Zend\InputFilter\InputFilter
      */
     protected $inputFilter;
-
+    
     /**
      * $serviceLocator
      * @var unknown_type
      */
     protected $serviceLocator;
-
+    
     /**
      * Magic getter to expose protected properties.
      *
@@ -41,7 +41,7 @@ abstract class AbstractEntity implements InputFilterAwareInterface
     {
         return $this->$property;
     }
-
+    
     /**
      * Magic setter to save protected properties.
      *
@@ -51,10 +51,10 @@ abstract class AbstractEntity implements InputFilterAwareInterface
     public function __set($property, $value)
     {
         $this->$property = $value;
-
+        
         return $this;
     }
-
+    
     /**
      * Convert the object to an array.
      *
@@ -64,7 +64,7 @@ abstract class AbstractEntity implements InputFilterAwareInterface
     {
         return get_object_vars($this);
     }
-
+    
     /**
      * Populate from an array.
      *
@@ -107,7 +107,7 @@ abstract class AbstractEntity implements InputFilterAwareInterface
     public function setServiceLocator($serviceLocator)
     {
         $this->serviceLocator = $serviceLocator;
-
+        
         return $this;
     }
 
@@ -119,4 +119,4 @@ abstract class AbstractEntity implements InputFilterAwareInterface
     {
         return $this->serviceLocator;
     }
-}
+} 

@@ -48,7 +48,7 @@ class Module
     {
         return array(
             /*'factories' => array(
-                'Doctrine\ORM\EntityManager' => function($sm) {
+                'Doctrine\ORM\EntityManager2' => function($sm) {
                     return new EntityManager();
                 },
             ),*/

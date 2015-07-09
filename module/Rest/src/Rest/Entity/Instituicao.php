@@ -1,28 +1,28 @@
 <?php
 
 /**
- * Esta classe contém uma representação da tabela TBFCL_SOLICITANTE
+ * Esta classe contém uma representação da tabela Artigos
  *
- * @author Leonard Albert <lampedro@fcl.com.br>
- * @date 29/01/2015 13:00h
+ * @author Leandro Oliveira <lreisoliveira@gmail.com>
+ * @date 09/01/2015 13:00h
  */
-namespace Api\Entity;
+namespace Rest\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Api\Entity\AbstractEntity;
+use Rest\Entity\AbstractEntity;
 
 /**
- * Fields da tabela Apdata
+ * Fields da tabela Artigos
  *
  * @ORM\Entity
  * @ORM\Table(name="artigos")
- * @ORM\Entity(repositoryClass="Api\Entity\InstituicaoRepository")
+ * @ORM\Entity(repositoryClass="Rest\Entity\InstituicaoRepository")
  *
  */
-class Instituicao extends AbstractEntity
+class Instituicao 
 {
     /**
-     * Número do Re do funcionário.
+     * Id do artigo
      *
      * @ORM\Id
      * @ORM\Column(name="id", type="integer")
@@ -32,11 +32,10 @@ class Instituicao extends AbstractEntity
     protected $id;
 
     /**
-     * Nome completo do funcionário.
+     * Nome do artigo
      *
      * @ORM\Column(name="descricao", type="string")
      * @var string $descricao
      */
     protected $descricao;
-
 }

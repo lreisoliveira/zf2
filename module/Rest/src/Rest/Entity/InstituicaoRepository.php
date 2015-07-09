@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Repositório da represetação da tabela UsuarioApdata. Contém as regras de pesquisa ao banco.
+ * Repositório da represetação da tabela Artigos
  */
-namespace Api\Entity;
+namespace Rest\Entity;
 
 use Doctrine\ORM\EntityRepository,
     Doctrine\ORM\Query\ResultSetMapping;
@@ -11,12 +11,12 @@ use Doctrine\ORM\EntityRepository,
 /**
  * Repositório da represetação da tabela UsuarioApdata. Contém as regras de pesquisa ao banco.
  *
- * @author Leonard Albert <lampedro@fcl.com.br>
- * @date 29/01/2015 13:00h
+ * @author Leandro Oliveira <lreisoliveira@gmail.com>
+ * @date 09/07/2015 13:00h
  * @version v1.1.0
- * @copyright © 2015, fcl.com.br
+ * @copyright © 2015, leandro.com.br
  * @access public
- * @package Intranet\Entity\UsuarioApdataRepository
+ * @package Rest\Entity\IntituicaoRepository
  */
 class InstituicaoRepository extends EntityRepository
 {
@@ -24,7 +24,7 @@ class InstituicaoRepository extends EntityRepository
     /**
      * Inicializa sessão com a base de dados
      *
-     * @author Leonard Albert <lampedro@fcl.com.br>
+	 * @author Leandro Oliveira <lreisoliveira@gmail.com>
      * @name init
      * @access public
      */
@@ -33,15 +33,15 @@ class InstituicaoRepository extends EntityRepository
         $this->getEntityManager()->getConnection()->getDriver()->getName();
     }
 
-        /**
-     * Busca todos usuários Ativos da empresa.
+    /**
+     * Busca todos os registros
      *
      * @return object
      */
     public function listar()
     {
         $this->init();
-        $sql = 'SELECT u FROM Api\Entity\Instituicao u';
+        $sql = 'SELECT u FROM Rest\Entity\Instituicao u';
         $r = $this->getEntityManager()->createQuery($sql)->execute();
         return  $this->getEntityManager()->createQuery($sql)->execute();
     }
